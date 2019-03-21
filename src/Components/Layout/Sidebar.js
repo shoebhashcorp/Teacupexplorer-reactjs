@@ -4,20 +4,20 @@ class Sidebar extends Component {
   render() {
     return (
       <div>
-        <div class="se-pre-con" />
-        <div class="wrapper">
+        <div className="se-pre-con" />
+        <div className="wrapper">
           <nav id="sidebar">
-            <div class="sidebar-header">
+            <div className="sidebar-header">
               <h1>
                 <a href="index.html">Modernize</a>
               </h1>
               <span>M</span>
             </div>
-            <div class="profile-bg" />
-            <ul class="list-unstyled components">
-              <li class="active">
+            <div className="profile-bg" />
+            <ul className="list-unstyled components">
+              <li className="active">
                 <a href="index.html">
-                  <i class="fas fa-th-large" />
+                  <i className="fas fa-th-large" />
                   Dashboard
                 </a>
               </li>
@@ -27,37 +27,28 @@ class Sidebar extends Component {
                   data-toggle="collapse"
                   aria-expanded="false"
                 >
-                  <i class="fas fa-laptop" />
-                  Components
-                  <i class="fas fa-angle-down fa-pull-right" />
+                  <i className="fas fa-plus" />
+                  New
+                  <i className="fas fa-angle-down fa-pull-right" />
                 </a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
+                <ul className="collapse list-unstyled" id="homeSubmenu">
                   <li>
-                    <a href="cards.html">Cards</a>
+                    <a onClick={this.handleClick}>Folder</a>
                   </li>
                   <li>
-                    <a href="carousels.html">Carousels</a>
-                  </li>
-                  <li>
-                    <a href="forms.html">Forms</a>
-                  </li>
-                  <li>
-                    <a href="modals.html">Modals</a>
-                  </li>
-                  <li>
-                    <a href="tables.html">Tables</a>
+                    <a href="carousels.html">File</a>
                   </li>
                 </ul>
               </li>
               <li>
                 <a href="charts.html">
-                  <i class="fas fa-chart-pie" />
+                  <i className="fas fa-chart-pie" />
                   Charts
                 </a>
               </li>
               <li>
                 <a href="grids.html">
-                  <i class="fas fa-th" />
+                  <i className="fas fa-th" />
                   Grid Layouts
                 </a>
               </li>
@@ -67,11 +58,11 @@ class Sidebar extends Component {
                   data-toggle="collapse"
                   aria-expanded="false"
                 >
-                  <i class="far fa-file" />
+                  <i className="far fa-file" />
                   Pages
-                  <i class="fas fa-angle-down fa-pull-right" />
+                  <i className="fas fa-angle-down fa-pull-right" />
                 </a>
-                <ul class="collapse list-unstyled" id="pageSubmenu1">
+                <ul className="collapse list-unstyled" id="pageSubmenu1">
                   <li>
                     <a href="404.html">404</a>
                   </li>
@@ -83,38 +74,38 @@ class Sidebar extends Component {
                   </li>
                 </ul>
               </li>
-              <li>
+              {/* <li>
                 <a href="mailbox.html">
-                  <i class="far fa-envelope" />
+                  <i className="far fa-envelope" />
                   Mailbox
-                  <span class="badge badge-secondary float-md-right bg-danger">
+                  <span className="badge badge-secondary float-md-right bg-danger">
                     5 New
                   </span>
                 </a>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <a href="widgets.html">
-                  <i class="far fa-window-restore" />
+                  <i className="far fa-window-restore" />
                   Widgets
                 </a>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <a href="pricing.html">
-                  <i class="fas fa-table" />
+                  <i className="fas fa-table" />
                   Pricing Tables
                 </a>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <a
                   href="#pageSubmenu3"
                   data-toggle="collapse"
                   aria-expanded="false"
                 >
-                  <i class="fas fa-users" />
+                  <i className="fas fa-users" />
                   User
-                  <i class="fas fa-angle-down fa-pull-right" />
+                  <i className="fas fa-angle-down fa-pull-right" />
                 </a>
-                <ul class="collapse list-unstyled" id="pageSubmenu3">
+                <ul className="collapse list-unstyled" id="pageSubmenu3">
                   <li>
                     <a href="login.html">Login</a>
                   </li>
@@ -125,10 +116,10 @@ class Sidebar extends Component {
                     <a href="forgot.html">Forgot password</a>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li>
                 <a href="maps.html">
-                  <i class="far fa-map" />
+                  <i className="far fa-map" />
                   Maps
                 </a>
               </li>
