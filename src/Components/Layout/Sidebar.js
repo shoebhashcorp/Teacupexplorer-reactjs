@@ -9,7 +9,7 @@ class Sidebar extends Component {
           <nav id="sidebar">
             <div className="sidebar-header">
               <h1>
-                <a href="index.html">Modernize</a>
+                <a href="index.html">TeaCup</a>
               </h1>
               <span>M</span>
             </div>

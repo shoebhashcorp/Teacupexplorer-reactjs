@@ -17,7 +17,7 @@ export class FolderInput extends Component {
     // Ensure a todo was actually entered before submitting
     if (item.length > 0) {
       this.props.addFolder(item);
-      this.setState({ value: "dd" });
+      this.setState({ value: "" });
     }
   }
   render() {
@@ -29,10 +29,10 @@ export class FolderInput extends Component {
           onChange={this.handleChange}
         />
         <button
-          className="btn btn-primary"
+          className="fas fa-plus btn btn-primary"
           onClick={() => this.onSubmit(this.state.value)}
         >
-          Submit
+          NewFolder
         </button>
       </div>
     );
