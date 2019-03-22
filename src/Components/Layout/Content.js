@@ -71,7 +71,7 @@ export class Content extends Component {
                   <div className="row">
                     <div className="col -md -12" />
                   </div>
-                  <FolderInput folderName="dd" addFolder={this.addFolder} />
+                  <FolderInput folderName="" addFolder={this.addFolder} />
                   <hr />
                   <div className="container-fluid">
                     <div className="row">

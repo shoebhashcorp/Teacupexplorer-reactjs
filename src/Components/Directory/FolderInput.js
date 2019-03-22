@@ -17,7 +17,7 @@ export class FolderInput extends Component {
     // Ensure a todo was actually entered before submitting
     if (item.length > 0) {
       this.props.addFolder(item);
-      this.setState({ value: "dd" });
+      this.setState({ value: "" });
     }
   }
   render() {
