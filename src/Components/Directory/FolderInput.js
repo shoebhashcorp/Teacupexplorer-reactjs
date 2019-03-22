@@ -29,10 +29,10 @@ export class FolderInput extends Component {
           onChange={this.handleChange}
         />
         <button
-          className="btn btn-primary"
+          className="fas fa-plus btn btn-primary"
           onClick={() => this.onSubmit(this.state.value)}
         >
-          Submit
+          NewFolder
         </button>
       </div>
     );
