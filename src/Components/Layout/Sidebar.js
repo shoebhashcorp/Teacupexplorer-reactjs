@@ -33,7 +33,7 @@ class Sidebar extends Component {
                 </a>
                 <ul className="collapse list-unstyled" id="homeSubmenu">
                   <li>
-                    <a onClick={this.handleClick}>Folder</a>
+                    <a href="/">Folder</a>
                   </li>
                   <li>
                     <a href="carousels.html">File</a>

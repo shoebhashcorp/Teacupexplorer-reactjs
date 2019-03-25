@@ -7,6 +7,7 @@ export class FolderInput extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.keyPress = this.keyPress.bind(this);
   }
 
   handleChange(e) {
@@ -20,6 +21,16 @@ export class FolderInput extends Component {
       this.setState({ value: "" });
     }
   }
+  keyPress(e, item) {
+    if (e.keyCode === 13) {
+      console.log(e.target.value);
+      if (item.length > 0) {
+        this.props.addFolder(item);
+        this.setState({ value: "" });
+      }
+    }
+  }
+
   render() {
     return (
       <div>
@@ -30,6 +41,7 @@ export class FolderInput extends Component {
         />
         <button
           className="fas fa-plus btn btn-primary"
+          onKeyDown={this.keyPress}
           onClick={() => this.onSubmit(this.state.value)}
         >
           NewFolder
