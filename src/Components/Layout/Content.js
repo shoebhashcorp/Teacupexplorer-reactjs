@@ -7,7 +7,9 @@ export class Content extends Component {
     super(props);
 
     this.state = {
-      data: tempData.data,
+      parent: null,
+      children: tempData.data,
+
       nextId: 4
     };
     this.addFolder = this.addFolder.bind(this);
@@ -15,8 +17,8 @@ export class Content extends Component {
   }
 
   addFolder(folderName) {
-    let { data, nextId } = this.state;
-    data.push({
+    let { children, nextId } = this.state;
+    children.push({
       id: nextId,
       name: folderName,
       extension: null,
@@ -24,14 +26,14 @@ export class Content extends Component {
     });
 
     this.setState({
-      data: data,
+      children: children,
       nextId: ++nextId
     });
   }
 
   removeFolder(id) {
     this.setState({
-      data: this.state.data.filter((item, index) => item.id !== id)
+      children: this.state.children.filter((item, index) => item.id !== id)
     });
   }
 
@@ -56,7 +58,7 @@ export class Content extends Component {
                       <div className="col-md-12">
                         <div className="content all-icons">
                           <div className="row ">
-                            {this.state.data.map(item => {
+                            {this.state.children.map(item => {
                               return (
                                 <Folders
                                   item={item}
