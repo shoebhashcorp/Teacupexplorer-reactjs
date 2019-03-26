@@ -6,49 +6,47 @@ class Folders extends Component {
     super(props);
 
     this.state = {
-      render: "",
-      parent: null,
-      children: tempData.data
+      data: tempData.data
     };
+    this.extractFiles = this.extractFiles.bind(this);
   }
-  handleClick(compName, e) {
-    console.log(compName);
-    this.setState({ render: compName });
-  }
-  _renderSubComp() {
-    // eslint-disable-next-line default-case
-    switch (this.state.render) {
-      case this.props.item.name:
-        return <Folder />;
+  extractFiles(item) {
+    console.log(item);
+    if (item.node && item.node.length > 0) {
+      console.log("is array");
+      this.setState({ data: item.node });
+    } else {
+      console.log("not array");
     }
   }
+
   removeFolder(id) {
     this.props.removeFolder(id);
   }
 
   render() {
+    const { data } = this.state;
     return (
-      <div className="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-        <i
-          className="fa fa-folder  fa-3x"
-          aria-hidden="true"
-          onClick={this.handleClick.bind(this, this.props.item.name)}
-        />
-        <a
-          href="/folder"
-          onClick={this.handleClick.bind(this, this.props.item.name)}
-          className="foldername"
-        >
-          {this.props.item.name}
-        </a>
-        {this._renderSubComp()}
+      <div>
+        {data.map((item, index) => (
+          <div
+            className="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6"
+            key={index}
+          >
+            <h4
+              className="folderButton"
+              onClick={() => {
+                this.extractFiles(item);
+              }}
+            >
+              <i className="fa fa-folder  fa-3x" aria-hidden="true" />
+              {item.name}
+            </h4>
+          </div>
+        ))}
       </div>
     );
   }
 }
-class Folder extends Component {
-  render() {
-    return <div>hi this is folder</div>;
-  }
-}
+
 export default Folders;
