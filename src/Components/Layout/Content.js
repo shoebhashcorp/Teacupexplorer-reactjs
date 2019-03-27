@@ -53,6 +53,7 @@ export class Content extends Component {
                   </div>
                   <FolderInput folderName="" addFolder={this.addFolder} />
                   <hr />
+
                   <div className="container-fluid">
                     <div className="row">
                       <div className="col-md-12">
