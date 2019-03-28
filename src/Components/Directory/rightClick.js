@@ -1,6 +1,7 @@
 import React from 'react';
 import { Menu, Item, Separator, Submenu, MenuProvider } from 'react-contexify';
 import 'react-contexify/dist/ReactContexify.min.css';
+import Folders from './Folders';
 
 const onClick = ({ event, props }) => console.log(event,props);
 
@@ -22,7 +23,7 @@ const MyAwesomeMenu = () => (
 const App = () => (
     <div>
         <MenuProvider id="menu_id" style={{ border: '1px solid purple', display: 'inline-block' }}>
-            Right click me...
+            <Folders/>
         </MenuProvider>
         <MyAwesomeMenu />
     </div>

@@ -3,7 +3,9 @@ import React, { Component } from "react";
 export class FolderInput extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: this.props.folderName };
+    this.state = { 
+      value: this.props.folderName 
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -16,7 +18,7 @@ export class FolderInput extends Component {
   onSubmit(item) {
     // Ensure a todo was actually entered before submitting
     if (item.length > 0) {
-      this.props.addFolder(item);
+      this.props.addFolder(item || item.node);
       this.setState({ value: "" });
     }
   }

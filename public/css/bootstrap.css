@@ -41,6 +41,9 @@
   box-sizing: border-box;
 }
 
+.folder-name{
+  float:left
+}
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -50,6 +53,8 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
+  
+}
 @-ms-viewport {
   width: device-width;
 }
@@ -83,12 +88,14 @@ body {
   font-size: 40px;
 }
 .all-icons input {
-  border: 2px;
-  background: white;
+  border: 2px solid cornflowerblue;
+  border
+  color:red;
+  background:white   
 }
-.all-icons .font-icon-detail {
-  text-align: center;
-  padding: 45px 0px 30px;
+.all-icons .fo  float:left,
+  text-align: 
+  padding: 45p}
 
   border-radius: 6px;
   margin: 15px 0;
@@ -948,6 +955,7 @@ pre code {
     -ms-flex: 0 0 33.333333%;
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
+    padding-top: 40px;
   }
   .col-sm-5 {
     -webkit-box-flex: 0;
@@ -2590,12 +2598,14 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #6c757d;
   border-color: #6c757d;
+  float: left
 }
 
 .btn-secondary:hover {
   color: #fff;
   background-color: #5a6268;
   border-color: #545b62;
+
 }
 
 .btn-secondary:focus, .btn-secondary.focus {

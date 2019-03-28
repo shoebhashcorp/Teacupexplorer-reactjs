@@ -5,8 +5,8 @@
       "name": "tcup",
       "extension": null,
       "node": [
-        { "id": 1, "name": "folder1", "extension": null },
-        { "id": 2, "name": "file1", "extension": ".txt" }
+        { "id": 1, "name": "folder1", "extension": null, "node": [] },
+        { "id": 2, "name": "file1", "extension": ".txt", "node": [] }
       ]
     },
     {
@@ -14,8 +14,8 @@
       "name": "explorer",
       "extension": null,
       "node": [
-        { "id": 3, "name": "folder2", "extension": null },
-        { "id": 4, "name": "file2", "extension": ".txt" }
+        { "id": 1, "name": "folder2", "extension": null, "node": [] },
+        { "id": 2, "name": "file2", "extension": ".txt", "node": [] }
       ]
     },
     {
@@ -23,8 +23,8 @@
       "name": "msr",
       "extension": null,
       "node": [
-        { "id": 5, "name": "folder3", "extension": null },
-        { "id": 6, "name": "file3", "extension": ".txt" }
+        { "id": 1, "name": "folder3", "extension": null, "node": [] },
+        { "id": 2, "name": "file3", "extension": ".txt", "node": [] }
       ]
     }
   ]

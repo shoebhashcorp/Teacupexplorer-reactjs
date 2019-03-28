@@ -8,6 +8,11 @@ import Content from "./Components/Layout/Content";
 // import { Item } from "react-contexify";
 
 class App extends Component {
+  componentDidMount() {
+    window.onpopstate = event => {
+      console.log(event);
+    };
+  }
   render() {
     return (
       <div className="App">
@@ -16,7 +21,6 @@ class App extends Component {
           <div className="container-fluid">
             <Navbar />
             <Content />
-            
           </div>
         </div>
       </div>
