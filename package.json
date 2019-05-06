@@ -1,28 +1,31 @@
 {
-  "name": "tcup",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.8.4",
-    "react-contexify": "^4.0.2",
-    "react-contextmenu": "^2.11.0",
-    "react-dom": "^16.8.4",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8"
-  },
+  "name": "teacupt-node-react-directory-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shoebhashcorp/Teacupexplorer-reactjs.git"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "author": "shoeb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shoebhashcorp/Teacupexplorer-reactjs/issues"
+  },
+  "homepage": "https://github.com/shoebhashcorp/Teacupexplorer-reactjs#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.5",
+    "passport": "^0.4.0",
+    "path": "^0.12.7"
+  }
 }
