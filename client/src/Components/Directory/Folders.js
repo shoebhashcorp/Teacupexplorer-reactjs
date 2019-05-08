@@ -1,45 +1,93 @@
 import React, { Component } from "react";
-import folderData from "../../TempData/tempdata.json";
+// import folderData from "../../TempData/tempdata.json";
 import FolderInput from "../Directory/FolderInput";
+import axios from "axios";
+
 export default class FilesorFolders extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      folderData: folderData.data,
+      folderData: [],
       parent: null,
       nextId: 4
     };
 
-    this.extractFiles = this.extractFiles.bind(this);
-    this.addFolder = this.addFolder.bind(this);
+    // this.extractFiles = this.extractFiles.bind(this);
+    // this.addFolder = this.addFolder.bind(this);
   }
 
-  addFolder(folderName) {
-    let { folderData, nextId } = this.state;
-    folderData.push({
-      id: nextId,
-      name: folderName,
-      extension: null,
-      node: []
-    });
-
-    this.setState({
-      folderData: folderData,
-      nextId: ++nextId
-    });
+  componentDidMount() {
+    this.reloadDir();
   }
 
-  extractFiles(item) {
-    let { parent } = this.state;
-    if (parent && parent.length > 0) {
-      parent.push(item.name);
-    } else {
-      parent = [item.name];
+  reloadDir = (pathtoexplore = "") => {
+    this.setState(
+      {
+        folderData: []
+      },
+      () => {
+        axios
+          .post("/api/dirman/dir", { pathtoexplore })
+          .then(res => {
+            if (res.status === 200) {
+              // console.log(res.data);
+              if (!res.data.error) {
+                this.setState({
+                  folderData: res.data.dirContent
+                });
+              }
+            }
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      }
+    );
+  };
+
+  // addFolder(folderName) {
+  //   let { folderData, nextId } = this.state;
+  //   folderData.push({
+  //     id: nextId,
+  //     name: folderName,
+  //     extension: null,
+  //     node: []
+  //   });
+
+  //   this.setState({
+  //     folderData: folderData,
+  //     nextId: ++nextId
+  //   });
+  // }
+  addFolder = folderName => {
+    if (folderName) {
+      axios
+        .post("/api/dirman", { pathtocreate: folderName })
+        .then(res => {
+          if (res.status === 200) {
+            // console.log(res.data);
+            if (!res.data.error) {
+              this.reloadDir();
+            }
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
-    console.log("parent", parent);
+  };
 
-    this.setState({ folderData: item.node, parent });
-  }
+  // extractFiles(item) {
+  //   let { parent } = this.state;
+  //   if (parent && parent.length > 0) {
+  //     parent.push(item.name);
+  //   } else {
+  //     parent = [item.name];
+  //   }
+  //   console.log("parent", parent);
+
+  //   this.setState({ folderData: item.node, parent });
+  // }
 
   dispBackButton() {
     let { parent } = this.state;
@@ -51,7 +99,8 @@ export default class FilesorFolders extends Component {
         <button
           className="go-back btn btn-secondary"
           onClick={() => {
-            this.clickBack();
+            // this.clickBack();
+            console.log("Need to fix the clickback");
           }}
         >
           Go Back
@@ -62,27 +111,27 @@ export default class FilesorFolders extends Component {
     }
   }
 
-  clickBack() {
-    let originalArray = [...folderData.data];
-    let parentArr = [...this.state.parent];
-    let count = 0;
-    console.log("original array", originalArray);
-    parentArr.forEach(item => {
-      let foundItem = null;
-      originalArray.forEach(arrItem => {
-        if (arrItem.name === item) {
-          foundItem = arrItem.node;
-          return;
-        }
-      });
-      if (parentArr.length - 1 > count) {
-        originalArray = foundItem;
-      }
-      count++;
-    });
-    parentArr.pop();
-    this.setState({ folderData: originalArray, parent: parentArr });
-  }
+  // clickBack() {
+  //   let originalArray = [...this.folderData];
+  //   let parentArr = [...this.state.parent];
+  //   let count = 0;
+  //   console.log("original array", originalArray);
+  //   parentArr.forEach(item => {
+  //     let foundItem = null;
+  //     originalArray.forEach(arrItem => {
+  //       if (arrItem.name === item) {
+  //         foundItem = arrItem.node;
+  //         return;
+  //       }
+  //     });
+  //     if (parentArr.length - 1 > count) {
+  //       originalArray = foundItem;
+  //     }
+  //     count++;
+  //   });
+  //   parentArr.pop();
+  //   this.setState({ folderData: originalArray, parent: parentArr });
+  // }
 
   displayContainer() {
     let { folderData } = this.state;
@@ -97,7 +146,8 @@ export default class FilesorFolders extends Component {
               <h4
                 className="folderButton"
                 onClick={() => {
-                  this.extractFiles(item);
+                  // this.extractFiles(item);
+                  console.log("Need to fix this");
                 }}
               >
                 <i className="fa fa-folder  fa-3x" aria-hidden="true" />

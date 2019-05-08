@@ -3,8 +3,8 @@ import React, { Component } from "react";
 export class FolderInput extends Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      value: this.props.folderName 
+    this.state = {
+      value: this.props.folderName
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -15,10 +15,11 @@ export class FolderInput extends Component {
     this.setState({ value: e.target.value });
   }
 
-  onSubmit(item) {
+  onSubmit() {
+    let { value } = this.state;
     // Ensure a todo was actually entered before submitting
-    if (item.length > 0) {
-      this.props.addFolder(item || item.node);
+    if (value.length > 0) {
+      this.props.addFolder(value);
       this.setState({ value: "" });
     }
   }
@@ -33,7 +34,7 @@ export class FolderInput extends Component {
         />
         <button
           className="fas fa-plus btn btn-primary"
-          onClick={() => this.onSubmit(this.state.value)}
+          onClick={() => this.onSubmit()}
         >
           NewFolder
         </button>

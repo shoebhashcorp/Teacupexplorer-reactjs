@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.8.4",
     "react-contexify": "^4.0.2",
     "react-contextmenu": "^2.11.0",
@@ -16,6 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:8080",
   "eslintConfig": {
     "extends": "react-app"
   },

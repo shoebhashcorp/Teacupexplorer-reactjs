@@ -7,23 +7,18 @@ export class Content extends Component {
     super(props);
 
     this.state = {
-      data: tempData.data,
-
-      
+      data: tempData.data
     };
-    
-    this.removeFolder = this.removeFolder.bind(this);
-    
-  }
 
-  
+    this.removeFolder = this.removeFolder.bind(this);
+  }
 
   removeFolder(id) {
     this.setState({
       data: this.state.data.filter((item, index) => item.id !== id)
     });
   }
-  
+
   render() {
     // console.log(this.state.data);
     return (
@@ -33,14 +28,14 @@ export class Content extends Component {
             <div className="main">
               <div className="container-fluid">
                 <div className="row" />
-                
+
                 <div className="content">
                   <div className="row">
                     <div className="col -md -12" />
                   </div>
-                  
+
                   <hr />
-                  
+
                   <div className="container-fluid">
                     <div className="row">
                       <div className="col-md-12">

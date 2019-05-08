@@ -11,6 +11,7 @@ const app = express();
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+// app.set("approot", path.resolve(__dirname));
 
 global.appRoot = path.resolve(__dirname);
 
@@ -34,6 +35,6 @@ app.use("/api/users", users);
 
 app.use("/api/dirman", dirMan);
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
